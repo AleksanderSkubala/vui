@@ -13,7 +13,7 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <vui-form>
+    <vui-form-wrapper>
       <vui-form-row>
         <vui-input
           name="firstName"
@@ -22,12 +22,16 @@ export default defineComponent({
           autocomplete="fname"
         />
         <vui-input
-          name="firstName"
-          label="First Name"
-          placeholder="e.g. John"
-          autocomplete="fname"
+          name="lastName"
+          label="Last Name"
+          placeholder="e.g. Skubala"
+          autocomplete="lname"
+          outline
         />
       </vui-form-row>
-    </vui-form>
+      <vui-form-row>
+        <vui-button>Send form!</vui-button>
+      </vui-form-row>
+    </vui-form-wrapper>
   </div>
 </template>

@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-.form__row {
+.vui-form__row {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;

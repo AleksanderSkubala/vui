@@ -49,9 +49,12 @@ export default defineComponent({
 
 .vui-input {
   color: gray;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+
+  font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .inputWrapper {
@@ -59,6 +62,8 @@ export default defineComponent({
   position: relative;
 
   input {
+    font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font-size: .8em;
     padding: 10px 12px;
     border: none;
     border-radius: 4px;

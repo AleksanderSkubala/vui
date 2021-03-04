@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "VuiForm",
+  name: "VuiFormWrapper",
 };
 </script>
