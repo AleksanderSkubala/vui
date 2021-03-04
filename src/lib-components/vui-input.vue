@@ -45,54 +45,59 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-  .vui-input {
-    color: gray;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
+
+.vui-input {
+  color: gray;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+.inputWrapper {
+  margin-top: 10px;
+  position: relative;
+
+  input {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #ececec;
+    outline: none;
+    caret-color: #2196f3;
   }
 
-  .inputWrapper {
-    margin-top: 10px;
-    position: relative;
-
-    input {
-      padding: 10px 12px;
-      border: none;
-      border-radius: 4px;
-      background: #ececec;
-      outline: none;
-      caret-color: #2196f3;
-    }
-
-    .line {
-      border-radius: 0 0 3px 3px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #2196f3;
-      height: 2px;
-      opacity: 0;
-      transform: scaleX(0.4);
-      transition: transform 0.2s ease;
-    }
-
-    input:focus ~ .line {
-      opacity: 1;
-      transform: scaleX(1);
-    }
+  .line {
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2196f3;
+    height: 2px;
+    opacity: 0;
+    transform: scaleX(0.4);
+    transition: transform 0.2s ease;
   }
 
-  .inputWrapper--outline {
-    input {
-      box-shadow: none;
-      transition: box-shadow 0.2s ease;
-    }
-
-    input:focus {
-      box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.5);
-    }
-
-    .line {
-      display: none;
-    }
+  input:focus ~ .line {
+    opacity: 1;
+    transform: scaleX(1);
   }
+}
+
+.inputWrapper--outline {
+  input {
+    box-shadow: none;
+    transition: box-shadow 0.2s ease;
+  }
+
+  input:focus {
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.5);
+  }
+
+  .line {
+    display: none;
+  }
+}
 </style>

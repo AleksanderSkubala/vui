@@ -1,8 +1,9 @@
 {
   "name": "vui3",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Simple component library for Vue 3",
   "author": "aleksander.skubala",
+  "license": "MIT",
   "main": "dist/vui.ssr.js",
   "browser": "dist/vui.esm.js",
   "module": "dist/vui.esm.js",

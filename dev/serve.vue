@@ -13,13 +13,21 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <vui-sample />
-    <vui-input
-      v-model="firstName"
-      name="firstName"
-      label="First Name"
-      placeholder="e.g. John"
-      autocomplete="fname"
-    />
+    <vui-form>
+      <vui-form-row>
+        <vui-input
+          name="firstName"
+          label="First Name"
+          placeholder="e.g. John"
+          autocomplete="fname"
+        />
+        <vui-input
+          name="firstName"
+          label="First Name"
+          placeholder="e.g. John"
+          autocomplete="fname"
+        />
+      </vui-form-row>
+    </vui-form>
   </div>
 </template>
