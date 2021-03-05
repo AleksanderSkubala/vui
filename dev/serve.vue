@@ -30,6 +30,9 @@ export default defineComponent({
         />
       </vui-form-row>
       <vui-form-row>
+        <vui-checkbox name="gdpr" label="I agree with terms of GDPR."/>
+      </vui-form-row>
+      <vui-form-row>
         <vui-button>Send form!</vui-button>
       </vui-form-row>
     </vui-form-wrapper>

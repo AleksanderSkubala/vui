@@ -55,6 +55,10 @@ export default defineComponent({
   font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  label {
+    font-size: .8em;
+  }
 }
 
 .inputWrapper {

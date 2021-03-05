@@ -11,7 +11,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: "VuiButton",
   props: {
     ghost: {
@@ -23,7 +25,7 @@ export default {
       type: Boolean,
     },
   },
-};
+});
 </script>
 
 <style lang="scss">
