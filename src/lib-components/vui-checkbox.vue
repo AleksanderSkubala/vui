@@ -101,6 +101,12 @@ export default defineComponent({
       font-size: .9em;
     }
   }
+
+  &:hover {
+    span:first-child {
+      border-color: #506EEC;
+    }
+  }
 }
 
 .vui-checkbox__input:checked + .vui-checkbox__label {
@@ -120,6 +126,12 @@ export default defineComponent({
         transition: transform .6s ease, opacity .6s ease;
       }
     }
+  }
+}
+
+.vui-checkbox__input:focus + .vui-checkbox__label {
+  span:first-child {
+    border-color: #506EEC;
   }
 }
 </style>

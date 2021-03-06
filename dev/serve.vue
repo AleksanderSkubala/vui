@@ -7,7 +7,7 @@ export default defineComponent({
   name: 'ServeDev',
   methods: {
     greet() {
-      alert('hello');
+      console.log('btn clicked!');
     },
     handleInput(value) {
       console.log(value);

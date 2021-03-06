@@ -38,6 +38,7 @@ export default defineComponent({
 
   color: white;
   background: #2196f3;
+  position: relative;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -45,8 +46,30 @@ export default defineComponent({
   padding: 10px 20px;
   cursor: pointer;
 
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #2196f3;
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    transform: scaleX(1) scaleY(1);
+    opacity: .5;
+  }
+
   &:hover {
     background: #1085e2;
+  }
+
+  &:focus::before {
+    transform: scaleX(1.15) scaleY(1.45);
+    opacity: 0;
+    transition: transform .6s ease, opacity .6s ease;
   }
 }
 
