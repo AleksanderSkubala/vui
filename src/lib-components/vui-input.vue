@@ -6,7 +6,7 @@
         type="text"
         :name="name"
         :placeholder="placeholder"
-        @input="$emit('input', $event.target.value)"
+        @input="$emit('handler', $event.target.value)"
         :autocomplete="autocomplete"
       />
       <div class="line"></div>

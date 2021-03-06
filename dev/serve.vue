@@ -5,6 +5,17 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'ServeDev',
+  methods: {
+    greet() {
+      alert('hello');
+    },
+    handleInput(value) {
+      console.log(value);
+    },
+    handleCheck(value) {
+      console.log(value);
+    },
+  },
   // components: {
   //  VuiSample,
   // }
@@ -27,13 +38,14 @@ export default defineComponent({
           placeholder="e.g. Skubala"
           autocomplete="lname"
           outline
+          @handler="handleInput"
         />
       </vui-form-row>
       <vui-form-row>
-        <vui-checkbox name="gdpr" label="I agree with terms of GDPR."/>
+        <vui-checkbox name="gdpr" label="I agree with terms of GDPR." @handler="handleCheck"/>
       </vui-form-row>
       <vui-form-row>
-        <vui-button>Send form!</vui-button>
+        <vui-button @click="greet">Send form!</vui-button>
       </vui-form-row>
     </vui-form-wrapper>
   </div>

@@ -3,6 +3,7 @@
     <input
       type="checkbox"
       :id="name"
+      @click="$emit('handler', $event.target.checked)"
       class="vui-checkbox__input"
       style="display: none;"
     />
@@ -38,30 +39,33 @@ export default defineComponent({
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
 
+@keyframes check {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 .vui-checkbox {
   font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 
 .vui-checkbox__label {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 
   span {
     display: inline-block;
     vertical-align: middle;
-    transform: translate3d(0, 0, 0);
 
     &:first-child {
       position: relative;
-      width: 24px;
+      vertical-align: center;
       height: 24px;
-      border-radius: 50%;
-      transform: scale(1);
-      vertical-align: middle;
+      width: 24px;
+      border-radius: 51%;
       border: 1px solid #CAC9D4;
-      transition: all 0.2s ease;
 
       svg {
         position: absolute;
@@ -70,85 +74,52 @@ export default defineComponent({
         left: 6px;
         fill: none;
         stroke: white;
-        stroke-width: 2;
+        stroke-width: 2px;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-dasharray: 16px;
         stroke-dashoffset: 16px;
-        transition: all 0.3s ease;
-        transition-delay: 0.1s;
-        transform: translate3d(0, 0, 0);
+
+        transition: stroke-dashoffset .3s ease;
+        transition-delay: .1s;
       }
 
-      &:before {
-        content: "";
+      &::before {
+        content: '';
         width: 100%;
         height: 100%;
-        background: #506EEC;
         display: block;
+        background: #506EEC;
+        border-radius: 51%;
         transform: scale(0);
         opacity: 1;
-        border-radius: 50%;
-        transition-delay: 0.2s;
       }
     }
 
     &:last-child {
       margin-left: 4px;
       font-size: .9em;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background: #CAC9D4;
-        transform-origin: 0 0;
-        transform: scaleX(0);
-      }
     }
-  }
-
-  &:hover span:first-child {
-    border-color: #2196f3;
   }
 }
 
 .vui-checkbox__input:checked + .vui-checkbox__label {
   span {
     &:first-child {
-      border-color: #2196f3;
-      background: #2196f3;
-      animation: check 0.6s ease;
+      border-color: #506EEC;
+      background: #506EEC;
+      animation: check .6s ease;
 
       svg {
         stroke-dashoffset: 0;
       }
 
-      &:before {
+      &::before {
         transform: scale(2.2);
         opacity: 0;
-        transition: all 0.6s ease;
+        transition: transform .6s ease, opacity .6s ease;
       }
     }
-
-    &:last-child {
-      color: #CAC9D4;
-      transition: all 0.3s ease;
-
-      &:after {
-        transform: scaleX(0);
-        transition: all 0.3s ease;
-      }
-    }
-  }
-}
-
-@keyframes check {
-  50% {
-    transform: scale(1.2);
   }
 }
 </style>
