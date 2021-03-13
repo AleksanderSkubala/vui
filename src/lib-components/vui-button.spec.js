@@ -14,7 +14,7 @@ describe('vui-button test', () => {
   // })
 
   it('renders without crashing', () => {
-    const wrapper = shallowMount(VuiButton)
+    const wrapper = shallowMount(VuiButton);
     // const button = wrapper.find('.vui-button')
     // expect(button).toBeDefined()
   })

@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 name: Build & Publish to NPM
+=======
+name: Build & Publish to NPM (Production)
+>>>>>>> development
 on:
   push:
     branches:
       - main
+<<<<<<< HEAD
+=======
+  pull_request:
+    branches:
+      - main
+>>>>>>> development
 
 jobs:
   deploy:

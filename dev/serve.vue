@@ -2,9 +2,11 @@
 import { defineComponent } from 'vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { VuiSample } from '@/entry.esm';
-
 export default defineComponent({
   name: 'ServeDev',
+  // components: {
+  //  VuiSample,
+  // }
   methods: {
     greet() {
       console.log('btn clicked!');
@@ -16,9 +18,6 @@ export default defineComponent({
       console.log(value);
     },
   },
-  // components: {
-  //  VuiSample,
-  // }
 });
 </script>
 
@@ -47,6 +46,7 @@ export default defineComponent({
       </vui-form-row>
       <vui-form-row>
         <vui-button @click="greet">Send form!</vui-button>
+        <vui-button @click="greet" ghost>Send form!</vui-button>
       </vui-form-row>
     </vui-form-wrapper>
   </div>
