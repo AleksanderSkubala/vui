@@ -1,25 +1,24 @@
 {
   "name": "vui3",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple component library for Vue 3",
   "author": "aleksander.skubala",
-  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.js",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "test:unit": "vue-cli-service test:unit",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  },
   "main": "dist/vui.ssr.js",
-  "browser": "dist/vui.esm.js",
   "module": "dist/vui.esm.js",
+  "browser": "dist/vui.esm.js",
   "unpkg": "dist/vui.min.js",
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
-  "sideEffects": false,
-  "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
-  },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -29,9 +28,12 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
+    "@testing-library/vue": "^5.6.1",
     "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-unit-jest": "^4.5.11",
     "@vue/cli-service": "^4.5.10",
-    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/compiler-sfc": "^3.0.7",
+    "@vue/test-utils": "^2.0.0-rc.3",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
     "postcss": "^8.2.3",
@@ -41,12 +43,18 @@
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
-    "vue": "^3.0.5"
+    "typescript": "~3.9.3",
+    "vue": "^3.0.0",
+    "vue-class-component": "^7.2.6",
+    "vue-jest": "^5.0.0-0",
+    "vue-property-decorator": "^10.0.0-rc.2"
   },
   "peerDependencies": {
-    "vue": "^3.0.5"
+    "vue": "^3.0.0"
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "license": "MIT",
+  "sideEffects": false
 }

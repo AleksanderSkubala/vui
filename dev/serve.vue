@@ -31,6 +31,7 @@ export default defineComponent({
           label="First Name"
           placeholder="e.g. John"
           autocomplete="fname"
+          @handleInput="handleInput"
         />
         <vui-input
           name="lastName"
@@ -38,7 +39,7 @@ export default defineComponent({
           placeholder="e.g. Skubala"
           autocomplete="lname"
           outline
-          @handler="handleInput"
+          @handleInput="handleInput"
         />
       </vui-form-row>
       <vui-form-row>

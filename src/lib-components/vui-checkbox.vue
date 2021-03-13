@@ -3,7 +3,7 @@
     <input
       type="checkbox"
       :id="name"
-      @click="$emit('handler', $event.target.checked)"
+      @click="$emit('handleCheck', $event.target.checked)"
       class="vui-checkbox__input"
       style="display: none;"
     />
@@ -97,7 +97,7 @@ export default defineComponent({
     }
 
     &:last-child {
-      margin-left: 4px;
+      margin-left: 3px;
       font-size: .9em;
     }
   }
