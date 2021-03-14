@@ -1,10 +1,10 @@
 import VuiButton from './vui-button.vue'
 // import { render } from '@testing-library/vue'
-import { shallowMount, createLocalVue, Wrapper } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 describe('vui-button test', () => {
   it('is truthy', () => {
-    // expect(VuiButton).toBeTruthy()
+    expect(VuiButton).toBeTruthy()
   })
 
   // it('renders without crashing', () => {
@@ -15,8 +15,8 @@ describe('vui-button test', () => {
 
   it('renders without crashing', () => {
     const wrapper = shallowMount(VuiButton);
-    // const button = wrapper.find('.vui-button')
-    // expect(button).toBeDefined()
+    const button = wrapper.find('.vui-button')
+    expect(button).toBeDefined()
   })
 
   it('renders without passing props', () => {})
