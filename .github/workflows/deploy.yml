@@ -16,4 +16,6 @@ jobs:
       - run: npm install
       - run: npm run test:unit
       - run: npm run build
-      - run: npm publish
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
