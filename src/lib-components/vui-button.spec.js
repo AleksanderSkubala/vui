@@ -1,27 +1,51 @@
-import VuiButton from './vui-button.vue'
-// import { render } from '@testing-library/vue'
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils';
+import VuiButton from './vui-button.vue';
 
 describe('vui-button test', () => {
   it('is truthy', () => {
-    expect(VuiButton).toBeTruthy()
-  })
-
-  // it('renders without crashing', () => {
-  //   const { getByRole } = render(VuiButton);
-  //   const button = getByRole('button');
-  //   expect(button).toBeTruthy();
-  // })
+    expect(VuiButton).toBeTruthy();
+  });
 
   it('renders without crashing', () => {
-    const wrapper = shallowMount(VuiButton);
-    const button = wrapper.find('.vui-button')
-    expect(button).toBeDefined()
-  })
+    const wrapper = mount(VuiButton);
+    const button = wrapper.find('.vui-button');
+    expect(button.exists()).toBe(true);
+  });
 
-  it('renders without passing props', () => {})
+  it('passes props properly', () => {
+    const wrapper = mount(VuiButton, {
+      propsData: {
+        ghost: true,
+        large: true,
+      }
+    });
+    const button = wrapper.find('.vui-button.vui-button--ghost.vui-button--large');
+    expect(button.exists()).toBe(true);
+  });
 
-  it('passes props and slot properly', () => {})
+  it('passes slot properly', () => {
+    const wrapper = mount(VuiButton, {
+      slots: {
+        default: '<h1 id="testSlot">testSlot</h1>',
+      }
+    });
+    const slot = wrapper.find('#testSlot');
+    expect(slot.exists()).toBe(true);
+  });
 
-  it('runs callback on handler', () => {})
-})
+  it('runs callback on click', async () => {
+    const clickHandler = jest.fn();
+    const wrapper = mount(VuiButton, {
+      propsData: {
+        onClick: clickHandler,
+      }
+    });
+    const button = wrapper.find('.vui-button');
+    expect(button.exists()).toBe(true);
+
+    await button.trigger('click');
+    expect(clickHandler).toHaveBeenCalled();
+
+    jest.restoreAllMocks();
+  });
+});
