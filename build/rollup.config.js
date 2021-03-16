@@ -1,3 +1,4 @@
+// rollup.config.js
 import fs from 'fs';
 import path from 'path';
 import vue from 'rollup-plugin-vue';
@@ -18,7 +19,7 @@ const esbrowserslist = fs.readFileSync('./.browserslistrc')
 
 const argv = minimist(process.argv.slice(2));
 
-const projectRoot = path.resolve(__dirname, '.');
+const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
   input: 'src/entry.js',
