@@ -1,6 +1,6 @@
 {
   "name": "vui3",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple component library for Vue 3",
   "author": "aleksander.skubala",
   "license": "MIT",
@@ -8,6 +8,10 @@
   "browser": "dist/vui.esm.js",
   "module": "dist/vui.esm.js",
   "unpkg": "dist/vui.min.js",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "test:unit": "vue-cli-service test:unit",
@@ -44,6 +48,7 @@
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
     "postcss": "^8.2.3",
+    "sass": "^1.32.8",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "vue": "^3.0.0"
