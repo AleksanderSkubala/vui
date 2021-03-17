@@ -1,14 +1,16 @@
 <template>
-  <div class="vui-group">
-    <div class="vui-group__header" @click="foldGroup">
-      <h3>{{ name }}</h3>
-      <svg :class="{'svg-up': !folded}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-    </div>
-    <div :class="[
-      'vui-group__content',
-      {'vui-group__content--folded': folded}
-    ]">
-      <slot/>
+  <div class="groupWrapper">
+    <div class="vui-group">
+      <div class="vui-group__header" @click="foldGroup">
+        <h3>{{ name }}</h3>
+        <svg :class="{'svg-up': !folded}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </div>
+      <div :class="[
+        'vui-group__content',
+        {'vui-group__content--folded': folded}
+      ]">
+        <slot/>
+      </div>
     </div>
   </div>
 </template>

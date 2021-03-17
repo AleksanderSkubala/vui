@@ -37,4 +37,18 @@ describe("vui-group", () => {
 
     expect(slot.html()).toContain('testSlot');
   });
+
+  it('adds proper classes on click', async () => {
+    const wrapper = mount(VuiGroup, {
+      propsData: {
+        name: 'testName',
+      },
+    });
+    const header = wrapper.find('.vui-group__header');
+    await header.trigger('click');
+    const svg = wrapper.find('.svg-up');
+
+    expect(svg.exists()).toBe(true);
+  });
+
 });

@@ -52,6 +52,7 @@ export default defineComponent({
     font-size: 1em;
     padding: 10px 20px;
     cursor: pointer;
+
     &::before {
       content: '';
       width: 100%;
@@ -66,11 +67,13 @@ export default defineComponent({
       transform: scaleX(1) scaleY(1);
       opacity: .5;
     }
+
     &:hover {
       background: #1085e2;
     }
+
     &:focus::before {
-      transform: scaleX(1.15) scaleY(1.45);
+      transform: scaleX(1.15) scaleY(1.35);
       opacity: 0;
       transition: transform .6s ease, opacity .6s ease;
     }
@@ -85,6 +88,7 @@ export default defineComponent({
     color: #2196f3;
     background: white;
     border: 1px solid #2196f3;
+
     &:hover {
       background: #eeeeeeee;
     }
