@@ -21,7 +21,7 @@ export default defineComponent({
   name: 'VuiInput',
   props: {
     placeholder: {
-      required: true,
+      required: false,
       type: String,
     },
     name: {
@@ -44,7 +44,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
 
   .vui-input {

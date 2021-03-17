@@ -36,7 +36,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
 
   @keyframes check {
@@ -79,7 +79,7 @@ export default defineComponent({
           stroke-linejoin: round;
           stroke-dasharray: 16px;
           stroke-dashoffset: 16px;
-          transition: stroke-dashoffset .3s ease;
+          transition: stroke-dashoffset .2s ease;
           transition-delay: .1s;
         }
 
@@ -96,7 +96,7 @@ export default defineComponent({
       }
 
       &:last-child {
-        margin-left: 4px;
+        margin-left: 10px;
         font-size: .9em;
       }
     }

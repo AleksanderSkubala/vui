@@ -1,13 +1,15 @@
 <template>
-  <button
-    :class="[
-      'vui-button',
-      { 'vui-button--ghost': ghost },
-      { 'vui-button--large': large },
-    ]"
-  >
-    <slot />
-  </button>
+  <div class="buttonWrapper">
+    <button
+      :class="[
+        'vui-button',
+        { 'vui-button--ghost': ghost },
+        { 'vui-button--large': large },
+      ]"
+    >
+      <slot />
+    </button>
+  </div>
 </template>
 
 <script>
@@ -28,8 +30,14 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
   .vui-button {
     font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
