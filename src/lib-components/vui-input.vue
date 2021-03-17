@@ -21,7 +21,7 @@ export default defineComponent({
   name: 'VuiInput',
   props: {
     placeholder: {
-      required: true,
+      required: false,
       type: String,
     },
     name: {

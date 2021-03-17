@@ -52,11 +52,24 @@ export default defineComponent({
         <vui-button @click="greet" ghost>Send form!</vui-button>
       </vui-form-row>
       <vui-form-row>
-        <vui-input
-          name="testText"
-          label="testText"
-        />
-        <vui-button @click="greet">Do it!</vui-button>
+        <vui-group name="Group">
+          <vui-form-row>
+            <vui-input
+              name="testText"
+              label="testText"
+            />
+            <vui-button @click="greet">Do it!</vui-button>
+          </vui-form-row>
+        </vui-group>
+        <vui-group name="Group">
+          <vui-form-row>
+            <vui-input
+              name="testText"
+              label="testText"
+            />
+            <vui-button @click="greet">Do it!</vui-button>
+          </vui-form-row>
+        </vui-group>
       </vui-form-row>
     </vui-form-wrapper>
   </div>
