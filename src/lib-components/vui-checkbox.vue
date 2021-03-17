@@ -96,7 +96,7 @@ export default defineComponent({
       }
 
       &:last-child {
-        margin-left: 4px;
+        margin-left: 10px;
         font-size: .9em;
       }
     }
