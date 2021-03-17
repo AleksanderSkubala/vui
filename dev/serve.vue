@@ -1,8 +1,11 @@
 <script>
 import { defineComponent } from 'vue';
+import vuiFormRow from '../src/lib-components/vui-form-row.vue';
+import VuiInput from '../src/lib-components/vui-input.vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { VuiSample } from '@/entry.esm';
 export default defineComponent({
+  components: { vuiFormRow, VuiInput },
   name: 'ServeDev',
   // components: {
   //  VuiSample,
@@ -42,11 +45,18 @@ export default defineComponent({
         />
       </vui-form-row>
       <vui-form-row>
-        <vui-checkbox name="gdpr" label="I agree with terms of GDPR." @handler="handleCheck"/>
+        <vui-checkbox name="gdpr" label="I agree with terms of GDPR." @handleCheck="handleCheck"/>
       </vui-form-row>
       <vui-form-row>
         <vui-button @click="greet">Send form!</vui-button>
         <vui-button @click="greet" ghost>Send form!</vui-button>
+      </vui-form-row>
+      <vui-form-row>
+        <vui-input
+          name="testText"
+          label="testText"
+        />
+        <vui-button @click="greet">Do it!</vui-button>
       </vui-form-row>
     </vui-form-wrapper>
   </div>

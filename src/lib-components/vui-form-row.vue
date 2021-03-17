@@ -12,7 +12,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .vui-form__row {
     display: flex;
     flex-wrap: wrap;
